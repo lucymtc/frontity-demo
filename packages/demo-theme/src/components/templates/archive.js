@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "frontity";
 import Link from "@frontity/components/link";
 
-const List = ({ state }) => {
+const Archive = ({ state }) => {
     const data = state.source.get(state.router.link);
     return (
         <div>
@@ -19,4 +19,4 @@ const List = ({ state }) => {
     );
 };
 
-export default connect(List);
+export default connect(Archive);

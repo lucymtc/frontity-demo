@@ -1,6 +1,6 @@
 import { Global, css, connect, styled, Head } from "frontity";
 import Switch from "@frontity/components/switch";
-import Header from "./header";
+import Header from "./organisms/header";
 import List from "./list";
 import Post from "./post";
 import Loading from "./loading";
