@@ -2,14 +2,21 @@ import React from "react";
 import { connect, styled } from "frontity";
 import Navigation from "../molecules/navigation";
 
-export const Header = ({ state }) => {
+export const Header = ({ state, actions }) => {
   const data = state.source.get(state.router.link);
 
   return (
     <StyledHeader isPostType={data.isPostType} isPage={data.isPage}>
       <HeaderInner>
         <h1>Frontity Workshop</h1>
-        <p>Current URL: {state.router.link}</p>
+        { state.theme.isUrlVisible ? ( 
+          <>
+            <p>Current URL: {state.router.link}</p> 
+            <Button onClick={actions.theme.toggleUrl}>Hide Url</Button>
+          </>
+        ) : 
+          <Button onClick={actions.theme.toggleUrl}>Show Url</Button>
+        }
         <Navigation />
       </HeaderInner>
     </StyledHeader>
@@ -35,4 +42,15 @@ const HeaderInner = styled.div`
   padding: 2em 1em;
   margin: auto;
 `;
+
+const Button = styled.button`
+  background: transparent;
+  border: none;
+  color: #aaa;
+
+  :hover {
+    cursor: pointer;
+    color: #888;
+  }
+`
   

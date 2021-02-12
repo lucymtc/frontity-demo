@@ -1,8 +1,9 @@
 import React from "react";
 import { connect, styled } from "frontity";
 import Link from "@frontity/components/link";
+import Pagination from "../molecules/pagination";
 
-const Archive = ({ state }) => {
+const Archive = ({ state, actions }) => {
   const data = state.source.get(state.router.link);
   return (
     <Items>
@@ -12,6 +13,10 @@ const Archive = ({ state }) => {
           <Link key={item.id} link={post.link}>{post.title.rendered}</Link>
         );
       })}
+      <Pagination 
+        next={data.next}
+        previous={data.previous} 
+      />
     </Items>
   );
 };
