@@ -6,6 +6,7 @@ const Navigation = () => {
   return (
     <Menu>
       <Link link="/">Home</Link>
+      <Link link="/destinations">Destinations</Link>
       <Link link="/about-us">About Us</Link>
     </Menu>
     );
